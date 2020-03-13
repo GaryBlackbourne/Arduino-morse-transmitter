@@ -120,7 +120,7 @@ void loop() {
             if(code[j] == '-'){
               beep();
             }
-            if(code[j]== "spc"){
+            if(code == "spc"){
               space();
             }
         }
