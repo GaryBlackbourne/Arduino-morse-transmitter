@@ -32,7 +32,7 @@ String lettercode[] = {
   "--.."  //Z
   };
 
-String numode[] = {
+String numcode[] = {
   "-----",  //0
   ".----",  //1
   "..---",  //2
@@ -47,17 +47,17 @@ String numode[] = {
 
 
 void beep(){
-  digitalWrite(output, 1);
-  delay(300);
   digitalWrite(output, 0);
+  delay(300);
+  digitalWrite(output, 1);
   delay(300);
   return;
 }
 
 void bip(){
-  digitalWrite(output, 1);
-  delay(100);
   digitalWrite(output, 0);
+  delay(100);
+  digitalWrite(output, 1);
   delay(100);
   return;
 }
@@ -74,7 +74,7 @@ String chartomorse(char input){
   }else if(input >= 'A' && input <= 'Z'){
     return lettercode[input-'A'];  
   }else if('0' <= input && input <= '9'){
-    return lettercode[input-'0'];
+    return numcode[input-'0'];
   }else if(input == '\n' || input == ' '){
     return "spc";
   }else{
@@ -84,7 +84,7 @@ String chartomorse(char input){
 
 void setup() {
     pinMode(output, OUTPUT);
-    digitalWrite(output, 0); //set initial transmitter state to 0 (in cases of built in led, 0 is OFF)
+    digitalWrite(output, 1); //set initial transmitter state to 0 (in cases of built in led, 0 is OFF)
     Serial.begin(9600);
 }
 
