@@ -50,7 +50,7 @@ void beep(){
   digitalWrite(output, 0);
   delay(300);
   digitalWrite(output, 1);
-  delay(300);
+  delay(100);
   return;
 }
 
@@ -63,7 +63,7 @@ void bip(){
 }
 
 void space(){
-  delay(700);
+  delay(400);
   return;
 }
 
@@ -124,7 +124,7 @@ void loop() {
               space();
             }
         }
+        delay(300); // gap between letters(space: 700 = 400 + 300)
       }
     }
-    space();
 }
